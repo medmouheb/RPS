@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RPS</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="rps.css">
+        <script src="rps.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Unlock" rel="stylesheet"> 
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row upper">
+                    <div class="col-sm-2 up" ><span id="scor-challenger" class="badge">0</span></div>
+                    <div class="col-sm-8 up" ><h1>Challenger VS Computer</h1></div>
+                    <div class="col-sm-2 up" ><span id="scor-cumputer" class="badge">0</span></div>
+                </div>
+            </div>
+        </header>
+        <div class="the-rolls">
+                <div class="container-fluid">
+                        <div class="row rolls" id="rolls-id">
+                            <div class="col-sm-1 " ></div>
+                            <div class="col-sm-10 main-rolls " >
+                                <ul>
+                                    <li><h1>Game rolls :</h1></li><br><br>
+                                    <li><h2>Rock beats scissors</h2></li><br>
+                                    <li><h2>Scissors beats paper</h2></li><br>
+                                    <li><h2>Paper beats rock</h2></li><br>
+                                    <li><h2>First one to get five points wins</h2></li><br>
+                                </ul>
+                                <button type="button" onclick="showgame()" class="btn btn-primary btn-block">START THE GAME</button> 
+                            </div>
+                            <div class="col-sm-1 " ></div>
+                        </div>
+                    </div>
+            
+
+        </div>
+        <main>
+            <div class="container-fluid ">
+                <div class="row the-game toggle-class" id="the-game-id">
+                    <div class="col-sm-4 challenger " id="challenger-id">
+                        <ul>
+                            <li><img class="palyer-hand rock" src="https://image.flaticon.com/icons/svg/1293/1293019.svg" alt="rock"></li>
+                            <li><img class="palyer-hand paper" src="https://image.flaticon.com/icons/svg/149/149285.svg" alt="paper"></li>
+                            <li><img class="palyer-hand scissors" src="https://image.flaticon.com/icons/svg/1293/1293013.svg" alt="scissors"></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 game-display" id="game-display-id">
+                    </div>
+                    <div class="col-sm-4 computer" id="computer-id" >
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="container-fluid">
+            <div class="row the-game-result ">
+                <div class="col-sm-12 toggle-class" id="result" >
+                    <button type="button" onclick="playAgain()" id="play-again" class="btn btn-primary btn-block">PLAY AGAIN</button> 
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

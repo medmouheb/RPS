@@ -1,0 +1,145 @@
+
+header
+{
+
+    background-image: url("http://cdn30.us1.fansshare.com/image/wallpapers/fire-fist-vs-water-fist-hd-desktop-wallpaper-high-definition-dual-monitor-wallpaper-348292925.jpg");
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.upper
+{
+    display: flex;
+    justify-content: center;
+}
+.up 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.up > h1
+{
+    font-size: 500%;
+    margin-top: 40px;
+}
+.badge
+{
+    font-size: 700%;
+}
+.rolls 
+{
+    background-image: url("https://media3.giphy.com/media/Lj3lt5pYUQBKE/giphy.gif");
+    height: 1000px; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+li
+{
+    color: white;
+}
+.computer
+{
+    min-height: 600px;
+    background-image: url('https://media2.giphy.com/media/3ohzdXcAHfULt5Wv3G/200w.webp?cid=3640f6095c0328f45a3145556fd97658');
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1; /* additionally, equal width */
+  
+  padding: 1em;
+  border: solid;
+}
+.the-game
+{
+    display: flex;
+}
+.game-display 
+{
+    background-image: url('https://media.giphy.com/media/xT9IgzHXBPeMfX8Nji/source.gif');
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1; /* additionally, equal width */
+  
+  padding: 1em;
+  border: solid;
+}
+
+.challenger
+{
+    background-image: url('https://media0.giphy.com/media/DTywu7YYjWCVW/200.webp?cid=3640f6095c032986303966324954fde5');
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1; /* additionally, equal width */
+  
+  padding: 1em;
+  border: solid;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+} 
+.main-rolls h1
+{
+    color: black;
+    font-family: 'Unlock', cursive;
+    background: linear-gradient(to right, red, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 100px;
+    line-height: 60px;
+}
+.main-rolls h2
+{
+    padding-left: 50px;
+    color: black;
+    font-family: 'Unlock', cursive;
+    background: linear-gradient(to right, yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 90px;
+    line-height: 60px;
+}
+.btn-block
+{
+    height: 100px;
+    font-size: 40px;
+}
+
+.palyer-hand
+{
+    max-width:  200px;
+}
+.col-sm-12
+{
+    background-image: url('https://media.giphy.com/media/l0HUnQR733uhm48UM/giphy.gif');
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+#play-again
+{
+    margin-top: 40px;
+}
+.toggle-class
+{
+    display: none !important;
+}
