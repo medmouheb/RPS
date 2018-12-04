@@ -29,8 +29,7 @@ var challengerScor=0
 var computerScor=0
 document.addEventListener("click",function myfunction(event)
 {
-    var valueSelected=0
-    var randomSelect=Math.floor(Math.random() * 3)
+    
     var changeBackgroundChallenger=document.getElementById("challenger-id")
     var changeBackgroundCumputer=document.getElementById("computer-id")
     var changeBackgroundGameDisplay=document.getElementById("game-display-id")
@@ -38,73 +37,89 @@ document.addEventListener("click",function myfunction(event)
     var labelChallengerScor=document.getElementById("scor-challenger")
     var labelComputerScor=document.getElementById("scor-cumputer")
     var testShow=!document.getElementById("the-game-id").classList.contains("toggle-class")
-    if(event.target.className=="palyer-hand rock" && testShow)
+    var valueSelected=null
+    var randomSelect=null
+    
+    if(testShow)
     {
-        valueSelected=0
-        testClick=false
-        changeBackgroundChallenger.style = "background-image : url('https://yt3.ggpht.com/a-/AN66SAytYyy8uIBWxo9NUBhAYFhRtlUVExK3CRYcug=s288-mo-c-c0xffffffff-rj-k-no')"
-    }
-    else if(event.target.className=="palyer-hand paper" && testShow)
-    {
-        valueSelected=1
-        changeBackgroundChallenger.style = "background-image : url('http://www.trendenterprises.com/images/productmedium/T1095MED.jpg')"
-        testClick=false
-    }
-    else if(event.target.className=="palyer-hand scissors" && testShow)
-    {
-        valueSelected=2
-        testClick=false
-        changeBackgroundChallenger.style = "background-image : url('https://cf5.s3.souqcdn.com/item/2016/08/17/11/39/17/40/item_XL_11391740_15946721.jpg')"
-    }
-    switch (randomSelect)
-    {
-        case 0:changeBackgroundCumputer.style= "background-image : url('https://yt3.ggpht.com/a-/AN66SAytYyy8uIBWxo9NUBhAYFhRtlUVExK3CRYcug=s288-mo-c-c0xffffffff-rj-k-no')"
-        break;
-        case 1:changeBackgroundCumputer.style = "background-image : url('http://www.trendenterprises.com/images/productmedium/T1095MED.jpg')"
-        break;
-        case 2:changeBackgroundCumputer.style = "background-image : url('https://cf5.s3.souqcdn.com/item/2016/08/17/11/39/17/40/item_XL_11391740_15946721.jpg')"
-        break;
-    }
+        if(event.target.className=="palyer-hand rock" )
+        {
+            randomSelect=randomPlayer()
+            valueSelected=0
+            testClick=false
+            changeBackgroundChallenger.style = "background-image : url('https://yt3.ggpht.com/a-/AN66SAytYyy8uIBWxo9NUBhAYFhRtlUVExK3CRYcug=s288-mo-c-c0xffffffff-rj-k-no')"
+        }
+        else if(event.target.className=="palyer-hand paper" )
+        {
+            randomSelect=randomPlayer()
+            valueSelected=1
+            changeBackgroundChallenger.style = "background-image : url('http://www.trendenterprises.com/images/productmedium/T1095MED.jpg')"
+            testClick=false
+        }
+        else if(event.target.className=="palyer-hand scissors" )
+        {
+            randomSelect=randomPlayer()
+            valueSelected=2
+            testClick=false
+            changeBackgroundChallenger.style = "background-image : url('https://cf5.s3.souqcdn.com/item/2016/08/17/11/39/17/40/item_XL_11391740_15946721.jpg')"
+        }
+        
 
-    if(randomSelect==valueSelected && testShow)
-    {
-        challengerScor++
-        computerScor++
-        changeBackgroundGameDisplay.style = "background-image : url('https://media.giphy.com/media/xUOwG8ZJjbbT9nrVXq/giphy.gif')"
-    }
-    else if((randomSelect==0 && valueSelected==1)||(randomSelect==1 && valueSelected==2)||(randomSelect== 2 && valueSelected== 0) && testShow)
-    {
-        challengerScor++
-        changeBackgroundGameDisplay.style = "background-image : url('https://media.giphy.com/media/ddHhhUBn25cuQ/giphy.gif')"
-    }
-    else if( testShow)
-    {
-        computerScor++
-        changeBackgroundGameDisplay.style = "background-image : url('https://media.giphy.com/media/3o6Zt8nXtveG25Rpba/giphy.gif')"
-    }
-    labelChallengerScor.innerHTML=challengerScor
-    labelComputerScor.innerHTML=computerScor
-    if(challengerScor==computerScor && challengerScor>4)
-    {
-        changeBackgroundResult.style = "background-image : url('https://media.giphy.com/media/tsgNNs93oIbwk/giphy.gif')"
-        changeBackgroundResult.classList.remove("toggle-class");
-        document.getElementById("the-game-id").classList.add("toggle-class")
-    }
-    else if (challengerScor>4)
-    {
-        changeBackgroundResult.style = "background-image : url('https://media.giphy.com/media/l0HUnQR733uhm48UM/giphy.gif')"
-        changeBackgroundResult.classList.remove("toggle-class");
-        document.getElementById("the-game-id").classList.add("toggle-class")
-    }
-    else if (computerScor >4)
-    {
-        changeBackgroundResult.style = "background-image : url('https://media.giphy.com/media/l3vR3gvEdsdJl26oU/giphy.gif')"
-        changeBackgroundResult.classList.remove("toggle-class");
-        document.getElementById("the-game-id").classList.add("toggle-class")
-    }
+        if(randomSelect==valueSelected && randomSelect!=null)
+        {
+            challengerScor++
+            computerScor++
+            changeBackgroundGameDisplay.style = "background-image : url('https://media.giphy.com/media/xUOwG8ZJjbbT9nrVXq/giphy.gif')"
+        }
+        else if((randomSelect==0 && valueSelected==1)||(randomSelect==1 && valueSelected==2)||(randomSelect== 2 && valueSelected== 0)&& randomSelect!=null)
+        {
+            challengerScor++
+            changeBackgroundGameDisplay.style = "background-image : url('https://media.giphy.com/media/ddHhhUBn25cuQ/giphy.gif')"
+        }
+        else if( testShow && randomSelect!=null)
+        {
+            computerScor++
+            changeBackgroundGameDisplay.style = "background-image : url('https://media.giphy.com/media/3o6Zt8nXtveG25Rpba/giphy.gif')"
+        }
+        labelChallengerScor.innerHTML=challengerScor
+        labelComputerScor.innerHTML=computerScor
+        if(challengerScor==computerScor && challengerScor>4)
+        {
+            changeBackgroundResult.style = "background-image : url('https://media.giphy.com/media/tsgNNs93oIbwk/giphy.gif')"
+            changeBackgroundResult.classList.remove("toggle-class");
+            document.getElementById("the-game-id").classList.add("toggle-class")
+        }
+        else if (challengerScor>4)
+        {
+            changeBackgroundResult.style = "background-image : url('https://media.giphy.com/media/l0HUnQR733uhm48UM/giphy.gif')"
+            changeBackgroundResult.classList.remove("toggle-class");
+            document.getElementById("the-game-id").classList.add("toggle-class")
+        }
+        else if (computerScor >4)
+        {
+            changeBackgroundResult.style = "background-image : url('https://media.giphy.com/media/l3vR3gvEdsdJl26oU/giphy.gif')"
+            changeBackgroundResult.classList.remove("toggle-class");
+            document.getElementById("the-game-id").classList.add("toggle-class")
+        }}
 
 }
 );
+function randomPlayer()
+{
+    var v=Math.floor(Math.random() * 3)
+    var changeBackgroundCumputer=document.getElementById("computer-id")
+
+    switch (v)
+        {
+            case 0:changeBackgroundCumputer.style= "background-image : url('https://yt3.ggpht.com/a-/AN66SAytYyy8uIBWxo9NUBhAYFhRtlUVExK3CRYcug=s288-mo-c-c0xffffffff-rj-k-no')"
+            break;
+            case 1:changeBackgroundCumputer.style = "background-image : url('http://www.trendenterprises.com/images/productmedium/T1095MED.jpg')"
+            break;
+            case 2:changeBackgroundCumputer.style = "background-image : url('https://cf5.s3.souqcdn.com/item/2016/08/17/11/39/17/40/item_XL_11391740_15946721.jpg')"
+            break;
+        }
+    return v
+}
 function showgame()
 {
     document.getElementById("rolls-id").classList.add("toggle-class")
@@ -112,7 +127,6 @@ function showgame()
 }
 function playAgain()
 {
-    alert("hey")
     document.getElementById("the-game-id").classList.remove("toggle-class")
     document.getElementById("result").classList.add("toggle-class")
     challengerScor=0
